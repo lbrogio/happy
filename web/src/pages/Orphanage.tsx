@@ -22,6 +22,7 @@ interface Orphanage {
 		id: number;
 		url: string;
 	}>;
+	celphone: String;
 }
 
 interface OrphanageParams {
@@ -120,11 +121,14 @@ export default function Orphanage() {
               					</div>
 							) }
 						</div>
-
-						{/*<button type="button" className="contact-button">
-							<FaWhatsapp size={20} color="#FFF" />
-             				Entrar em contato
-						</button>*/}
+						
+							
+						<a className="contact-button-link" target="_blank"  rel="noopener noreferrer" href={`https://api.whatsapp.com/send/?phone=${orphanage.celphone}&text=Olá,%20${orphanage.name},%20estou%20entrando%20em%20contato%20via%20Happy!%20:D`}>
+							<button type="button" className="contact-button">
+								<FaWhatsapp size={20} color="#FFF" />
+								Entrar em contato
+							</button>
+						</a>
 					</div>
 				</div>
 			</main>

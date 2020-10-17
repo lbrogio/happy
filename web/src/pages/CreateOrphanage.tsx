@@ -19,6 +19,7 @@ export default function OrphanagesMap() {
 	const [instructions, setInstructions] = useState('');
 	const [opening_hours, setOpeningHours] = useState('');
 	const [open_on_weekends, setOpenOnWeekends] = useState(true);
+	const [celphone, setCelphone] = useState('');
 	const [images, setImages] = useState<File[]>([]);
 	const [previewImages, setPreviewImages] = useState<string[]>([]);
 
@@ -61,6 +62,7 @@ export default function OrphanagesMap() {
 		data.append('instructions', instructions);
 		data.append('opening_hours', opening_hours);
 		data.append('open_on_weekends', String(open_on_weekends));
+		data.append('celphone', celphone);
 		
 		images.forEach(image => {
 			data.append('images', image);
@@ -117,6 +119,15 @@ export default function OrphanagesMap() {
 								maxLength={300}
 								value={about} 
 								onChange={event => setAbout(event.target.value)} 
+							/>
+						</div>
+
+						<div className="input-block">
+							<label htmlFor="celphone">Celular</label>
+							<input 
+								id="celphone" 
+								value={celphone} 
+								onChange={event => setCelphone(event.target.value)} 
 							/>
 						</div>
 
@@ -191,5 +202,3 @@ export default function OrphanagesMap() {
 		</div>
 	);
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
