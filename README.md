@@ -51,7 +51,7 @@ Após os procedimentos:
 
 **Back-End**
 ```bash
-> cd happy/web
+> cd happy/backend
 > npm install
 ```
 
